@@ -6,22 +6,29 @@ workflows:
     environment:
       vars:
         NODE_ENV: production
+      node: 18
     scripts:
-      - name: Install dependencies
+      - name: Clean and install dependencies
         script: |
-          npm ci  # Use ci instead of install for CI environments
-          # Verify electron-builder is installed
+          # Clean install to ensure all dependencies are properly installed
+          rm -rf node_modules package-lock.json
+          npm install
+          
+          # Verify installations
+          npx electron --version
           npx electron-builder --version
+          
       - name: Build for both architectures
         script: |
-          npx electron-builder --mac --x64 --arm64
-
+          # Build for both architectures
+          npx electron-builder --mac --x64
+          npx electron-builder --mac --arm64
+          
     artifacts:
       - dist/*.dmg
       - dist/*.zip
       - dist/**/*.app
+      
     cache:
       cache_paths:
         - $HOME/.npm
-        - node_modules
-

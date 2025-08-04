@@ -1,17 +1,19 @@
 {
   "name": "multiwindow",
   "version": "1.0.0",
+  "description": "A multi-window Electron application",
+  "author": "Your Name <your.email@example.com>",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "dist:win": "electron-builder --win nsis",
     "dist:mac": "electron-builder --mac",
-    "dist:mac:x64": "npx electron-builder --mac --x64",
-    "dist:mac:arm64": "npx electron-builder --mac --arm64",
+    "dist:mac:x64": "electron-builder --mac --x64",
+    "dist:mac:arm64": "electron-builder --mac --arm64",
     "dist:mac:universal": "electron-builder --mac --universal"
   },
   "devDependencies": {
-    "electron": "^36.3.1",
+    "electron": "^32.0.0",
     "electron-builder": "^24.13.3"
   },
   "build": {
