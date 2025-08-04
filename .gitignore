@@ -1,0 +1,38 @@
+# Ignore node_modules (very large folder)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS-related
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+
+# Build output
+dist/
+out/
+build/
+
+# Cache
+.cache/
+.pnpm-store/
+
+# Optional Electron / Platform-specific
+electron-packager-output/
+*.exe
+*.app
+*.dmg
+*.snap
+*.deb
+*.rpm
+*.msi
+
+# lock files (optional, if you don't want to commit them)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

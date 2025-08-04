@@ -1,0 +1,24 @@
+workflows:
+  build_macos_both:
+    name: Build Electron App for macOS (Both Architectures)
+    instance_type: mac_mini_m2
+    max_build_duration: 45
+    environment:
+      vars:
+        NODE_ENV: production
+    scripts:
+      - name: Install dependencies
+        script: npm install
+      - name: Build for both architectures
+        script: |
+          npm run dist:mac:x64
+          npm run dist:mac:arm64
+    artifacts:
+      - dist/*.dmg
+      - dist/*.zip
+      - dist/**/*.app
+    cache:
+      cache_paths:
+        - $HOME/.npm
+        - node_modules
+
