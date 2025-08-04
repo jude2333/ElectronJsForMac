@@ -14,7 +14,7 @@ workflows:
           npx electron-builder --version
       - name: Build for both architectures
         script: |
-          # npx electron-builder --mac --x64 --arm64
+          npx electron-builder --mac --x64 --arm64
 
     artifacts:
       - dist/*.dmg
