@@ -6,8 +6,8 @@
     "start": "electron .",
     "dist:win": "electron-builder --win nsis",
     "dist:mac": "electron-builder --mac",
-    "dist:mac:x64": "electron-builder --mac --x64",
-    "dist:mac:arm64": "electron-builder --mac --arm64",
+    "dist:mac:x64": "npx electron-builder --mac --x64",
+    "dist:mac:arm64": "npx electron-builder --mac --arm64",
     "dist:mac:universal": "electron-builder --mac --universal"
   },
   "devDependencies": {

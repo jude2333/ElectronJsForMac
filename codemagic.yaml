@@ -8,11 +8,14 @@ workflows:
         NODE_ENV: production
     scripts:
       - name: Install dependencies
-        script: npm install
+        script: |
+          npm ci  # Use ci instead of install for CI environments
+          # Verify electron-builder is installed
+          npx electron-builder --version
       - name: Build for both architectures
         script: |
-          npm run dist:mac:x64
-          npm run dist:mac:arm64
+          # npx electron-builder --mac --x64 --arm64
+
     artifacts:
       - dist/*.dmg
       - dist/*.zip
