@@ -17,6 +17,7 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
+    "publish": null,
     "appId": "com.andrsn.multiwindow",
     "productName": "MultiWindow",
     "directories": {
